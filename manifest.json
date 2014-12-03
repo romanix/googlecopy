@@ -1,0 +1,55 @@
+{
+  "name": "SearchCopy",
+  "short_name": "SearchCopy",
+  "description": "SearchCopy lets you copy  searches to https://www.searchcopy.ch/ ",
+  "version": "0.81",
+  "minimum_chrome_version": "9",
+  "manifest_version": 2,
+  "author": "Roman Bischoff",
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon32.png",
+    "64": "images/icon64.png",
+    "128":"images/icon128.png"
+  },
+  "page_action": {
+    "default_title": "share your search engine searches",
+           "default_icon": {                    
+             "19": "images/icon19.png",
+             "38": "images/icon38.png"        
+           }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "omnibox": { "keyword" : "omnix" },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.ch/*",
+        "https://www.google.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "permissions": [
+    "https://www.google.ch/*",
+    "https://www.google.com/*",
+    "<all_urls>", 
+    "background",
+    "tabs",
+    "activeTab",
+    "webNavigation",
+    "storage",
+    "debugger"
+  ],
+  "web_accessible_resources": [
+    "inject_script.js", 
+    "images/*.png"
+  ]
+}
