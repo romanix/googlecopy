@@ -6,13 +6,13 @@ client_name = "Bank XYZ AG"
 [accounts]    [accounts.warehouse]
     wsa_account_warehouse = "12600002323"
     wsa_account_1 = "1260000000234"
-    wsa_account_2 = "1260000000234"
+    wsa_account_2 = "1260000000235"
 
 [fix_connection]
     [fix_connection.something]
         TargetCompID = "BXYZ"
         SenderCompID = "OURID"
-        port = "10700"
+        port = "10701"
     [fix_connection.business]
             something = 1234
 
@@ -20,6 +20,3 @@ client_name = "Bank XYZ AG"
     allow_salesorder = true
     force_salesorder = true
     fix_allocations = true
-
-
-    
